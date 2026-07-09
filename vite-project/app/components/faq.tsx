@@ -2,6 +2,11 @@ import { Reveal } from "./reveal";
 
 const faqs = [
   {
+    question: "What does AffordaHaul sell?",
+    answer:
+      "AffordaHaul is a modern women's clothing shop in Tiwi, Albay carrying elegant, affordable pieces — dresses, tops, jeans, coords (matching sets), swimwear, and pants. Every item is brand new and hand-picked, with new styles dropping regularly.",
+  },
+  {
     question: "How do I place an order at AffordaHaul?",
     answer:
       "Message AffordaHaul on Facebook Messenger or TikTok with the name of the piece you want, and we'll reserve it for you right away. There's no account or online checkout — ordering is a simple chat, and we confirm everything before you pay.",
@@ -24,7 +29,7 @@ const faqs = [
   {
     question: "How do I know if an item is still available?",
     answer:
-      "Message us the item's name and we'll confirm availability and reserve it for you. Pieces are often one-offs and sell fast, so follow @affordahaul on TikTok and Facebook to catch new drops early.",
+      "Message us the item's name and we'll confirm availability and reserve it for you. Popular styles and sizes sell out fast, so follow @affordahaul on TikTok and Facebook to catch new drops and restocks early.",
   },
   {
     question: "Where is AffordaHaul located?",

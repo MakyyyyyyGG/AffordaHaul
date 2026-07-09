@@ -14,17 +14,20 @@ import { Footer } from "../components/footer";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "AffordaHaul — clothing avenue" },
+    { title: "AffordaHaul — Affordable Women's Clothing in Tiwi, Albay" },
     {
       name: "description",
       content:
-        "Cute, affordable fashion finds from AffordaHaul in Tiwi, Albay, Philippines. Browse the collection and order with Cash on Delivery or in-person payment.",
+        "Modern, elegant, affordable women's clothing in Tiwi, Albay. Shop dresses, tops, jeans, coords, swimwear, and pants — pay Cash on Delivery or in person.",
     },
-    { property: "og:title", content: "AffordaHaul — clothing avenue" },
+    {
+      property: "og:title",
+      content: "AffordaHaul — Affordable Women's Clothing in Tiwi, Albay",
+    },
     {
       property: "og:description",
       content:
-        "Cute, affordable fashion finds in Tiwi, Albay. Cash on Delivery and in-person payment available.",
+        "Modern, elegant women's fashion at kind prices — dresses, tops, jeans, coords, swimwear, and pants in Tiwi, Albay.",
     },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://afforda-haul.vercel.app/" },
@@ -43,7 +46,7 @@ const businessJsonLd = {
   name: "AffordaHaul",
   url: "https://afforda-haul.vercel.app/",
   description:
-    "Cute, affordable fashion finds in Tiwi, Albay. Order via Facebook Messenger or TikTok and pay with Cash on Delivery or in person.",
+    "Modern, elegant, and affordable women's clothing shop in Tiwi, Albay — dresses, tops, jeans, coords, swimwear, and pants. Order via Facebook Messenger or TikTok and pay with Cash on Delivery or in person.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "123 Clothing Avenue",
