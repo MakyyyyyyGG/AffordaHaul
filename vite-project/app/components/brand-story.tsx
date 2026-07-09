@@ -11,12 +11,14 @@ export function BrandStory() {
             width={800}
             height={900}
             loading="lazy"
-            className="aspect-[8/9] w-full rounded-t-[8rem] rounded-b-[2rem] border-2 border-plum-800 object-cover shadow-lilac"
+            className="aspect-[8/9] w-full rounded-t-full object-cover shadow-puff"
           />
         </Reveal>
         <Reveal delay={150}>
-          <p className="font-script text-2xl text-plum-500">our story</p>
-          <h2 className="mt-1 font-display text-5xl italic text-plum-600 sm:text-6xl">
+          <p className="text-xs font-bold tracking-[0.3em] text-plum-600 uppercase">
+            Our story
+          </p>
+          <h2 className="mt-3 font-display text-4xl font-medium text-plum-700 sm:text-5xl">
             Where affordable meets adorable
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-plum-700">

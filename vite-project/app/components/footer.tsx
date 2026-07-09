@@ -42,15 +42,17 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="overflow-hidden bg-plum-900 text-petal-100">
+    <footer className="overflow-hidden bg-plum-800 text-petal-100">
       <div className="mx-auto max-w-6xl px-4 pt-16 sm:px-6">
         <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
           <div>
-            <p className="font-display text-3xl italic text-petal-200">
-              afforda haul <span aria-hidden="true">🍒</span>
+            <p className="font-display text-2xl font-semibold lowercase text-petal-200">
+              affordahaul
             </p>
-            <p className="mt-1 font-script text-xl text-petal-300">clothing avenue</p>
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-petal-200">
+            <p className="mt-1 text-xs font-bold tracking-[0.3em] text-petal-300 uppercase">
+              Clothing avenue
+            </p>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-petal-100">
               Cute, affordable fashion finds — hand-picked and priced kindly.
               Cash on Delivery and in-person payment for every order.
             </p>
@@ -61,7 +63,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-petal-300/40 bg-plum-800 text-petal-200 transition-colors hover:border-petal-300 hover:bg-petal-300 hover:text-plum-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petal-200"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-petal-300/40 text-petal-200 transition-colors hover:border-petal-200 hover:bg-petal-200 hover:text-plum-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petal-200"
                   >
                     <span className="sr-only">{social.label}</span>
                     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
@@ -74,10 +76,10 @@ export function Footer() {
           </div>
           {linkColumns.map((column) => (
             <nav key={column.heading} aria-label={column.heading}>
-              <h2 className="text-sm font-extrabold tracking-widest text-petal-300 uppercase">
+              <h2 className="text-xs font-bold tracking-[0.25em] text-petal-300 uppercase">
                 {column.heading}
               </h2>
-              <ul className="mt-4 space-y-3 text-sm font-bold">
+              <ul className="mt-4 space-y-3 text-sm">
                 {column.links.map((link) => (
                   <li key={link.label}>
                     <a
@@ -95,18 +97,15 @@ export function Footer() {
 
         <p
           aria-hidden="true"
-          className="mt-16 -mb-4 text-center font-display text-[clamp(4rem,15vw,11rem)] leading-none italic text-petal-100/10 select-none sm:-mb-8"
+          className="mt-16 -mb-3 text-center font-display text-[clamp(3.5rem,14vw,10rem)] leading-none font-black lowercase text-petal-200 select-none sm:-mb-6"
         >
-          afforda haul
+          affordahaul
         </p>
       </div>
-      <div className="border-t border-plum-800">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-sm text-petal-200 sm:flex-row sm:px-6">
+      <div className="border-t border-petal-300/20 bg-plum-900">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-sm text-petal-100 sm:flex-row sm:px-6">
           <p>© {new Date().getFullYear()} AffordaHaul. All rights reserved.</p>
-          <p>
-            Made with <span aria-hidden="true">🍒</span>
-            <span className="sr-only">love</span> · COD available
-          </p>
+          <p>Made with love in Quezon City · COD available</p>
         </div>
       </div>
     </footer>

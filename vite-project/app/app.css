@@ -1,47 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Fraunces", "Georgia", serif;
-  --font-script: "Caveat", "Segoe Script", cursive;
 
   /* Cream — warm paper backgrounds */
-  --color-cream-50: #fefbf4;
-  --color-cream-100: #fbf3e3;
-  --color-cream-200: #f6e8cd;
+  --color-cream-50: #fdf8ee;
+  --color-cream-100: #f8f0dd;
+  --color-cream-200: #f1e4c6;
 
-  /* Petal pinks — pastel brand hue */
-  --color-petal-100: #fde3ea;
-  --color-petal-200: #f9ccd9;
-  --color-petal-300: #f4adc3;
-  --color-petal-400: #ec8aa9;
+  /* Petal pinks — soft brand hue */
+  --color-petal-100: #fadbe1;
+  --color-petal-200: #f5c3cd;
+  --color-petal-300: #eda2b2;
+  --color-petal-400: #e37f96;
 
-  /* Lilac — dreamy retro secondary */
-  --color-lilac-100: #e7e7fb;
-  --color-lilac-200: #cfd1f6;
-  --color-lilac-300: #b4b8f0;
+  /* Lilac — periwinkle secondary */
+  --color-lilac-100: #e4e6f9;
+  --color-lilac-200: #ccd0f3;
+  --color-lilac-300: #aeb4ea;
 
-  /* Peach — sunny accent */
-  --color-peach-100: #ffe8d6;
-  --color-peach-200: #ffd0af;
-  --color-peach-300: #ffb187;
+  /* Peach — warm accent */
+  --color-peach-100: #fbe3cf;
+  --color-peach-200: #f7c9a4;
+  --color-peach-300: #f0a878;
 
   /* Mint — fresh accent */
-  --color-mint-100: #ddf1e3;
-  --color-mint-200: #bfe5cc;
+  --color-mint-100: #e2efe2;
+  --color-mint-200: #c5e0c7;
 
-  /* Plum — brand maroon (#4A1C21) for text, outlines, buttons, footer */
-  --color-plum-500: #9a4f58;
-  --color-plum-600: #7c343c;
-  --color-plum-700: #63262d;
-  --color-plum-800: #4a1c21;
-  --color-plum-900: #351114;
+  /* Plum — deep burgundy for text, section blocks, footer */
+  --color-plum-500: #a04b54;
+  --color-plum-600: #86333c;
+  --color-plum-700: #6e2129;
+  --color-plum-800: #571920;
+  --color-plum-900: #401016;
 
-  /* Soft retro sticker shadows */
-  --shadow-lilac: 8px 8px 0 0 #cfd1f6;
-  --shadow-petal: 8px 8px 0 0 #f9ccd9;
-  --shadow-sticker: 5px 5px 0 0 #4a1c21;
-  --shadow-puff: 0 16px 40px -16px rgb(74 28 33 / 0.28);
+  /* Soft editorial shadow */
+  --shadow-puff: 0 12px 32px -16px rgb(64 16 22 / 0.25);
 }
 
 html {
@@ -58,24 +54,55 @@ body {
   @apply bg-cream-50 font-sans text-plum-800 antialiased;
 }
 
-/* Retro candy-stripe awning */
-.awning-stripes {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    var(--color-petal-200) 0 1.25rem,
-    var(--color-cream-50) 1.25rem 2.5rem
-  );
+/* Graph-paper texture over cream */
+.grid-paper {
+  background-color: var(--color-cream-50);
+  background-image:
+    linear-gradient(rgb(87 25 32 / 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(87 25 32 / 0.07) 1px, transparent 1px);
+  background-size: 2rem 2rem;
 }
 
-/* Checkerboard picnic ribbon */
-.checkerboard {
-  background-image: conic-gradient(
-    var(--color-petal-300) 0 25%,
-    var(--color-cream-50) 0 50%,
-    var(--color-petal-300) 0 75%,
-    var(--color-cream-50) 0
+/*
+ * Scalloped trim — a row of half-circles hanging below the element above.
+ * Set --scallop-color to the color of the section the scallops belong to.
+ */
+.scallop {
+  --scallop-size: 1.75rem;
+  --scallop-color: var(--color-plum-700);
+  height: calc(var(--scallop-size) / 2);
+  background-image: radial-gradient(
+    circle at 50% 0,
+    var(--scallop-color) calc(var(--scallop-size) / 2 - 0.5px),
+    transparent calc(var(--scallop-size) / 2)
   );
-  background-size: 1.5rem 1.5rem;
+  background-size: var(--scallop-size) calc(var(--scallop-size) / 2);
+  background-repeat: repeat-x;
+}
+
+.scallop-petal {
+  --scallop-color: var(--color-petal-100);
+}
+
+.scallop-plum {
+  --scallop-color: var(--color-plum-700);
+}
+
+.scallop-cream {
+  --scallop-color: var(--color-cream-50);
+}
+
+/* Two-tone checker ribbon — set --checker-a / --checker-b to swap the palette */
+.checker-trim {
+  --checker-a: var(--color-petal-200);
+  --checker-b: var(--color-cream-50);
+  background-image: conic-gradient(
+    var(--checker-a) 0 25%,
+    var(--checker-b) 0 50%,
+    var(--checker-a) 0 75%,
+    var(--checker-b) 0
+  );
+  background-size: 1rem 1rem;
 }
 
 @keyframes marquee {
@@ -99,6 +126,6 @@ body {
   }
 
   .marquee-track {
-    animation: marquee 22s linear infinite;
+    animation: marquee 28s linear infinite;
   }
 }

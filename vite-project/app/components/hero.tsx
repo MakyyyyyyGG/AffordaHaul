@@ -1,72 +1,59 @@
 import { Reveal } from "./reveal";
 
-function Cherries() {
-  return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12 sm:h-16 sm:w-16" aria-hidden="true">
-      <path
-        d="M27 34 Q30 16 42 8 Q36 22 40 36"
-        fill="none"
-        stroke="#7fb98e"
-        strokeWidth="3.5"
-        strokeLinecap="round"
-      />
-      <ellipse cx="47" cy="10" rx="9" ry="4.5" fill="#a3d9b2" transform="rotate(-24 47 10)" />
-      <circle cx="24" cy="43" r="11" fill="#ec8aa9" />
-      <circle cx="42" cy="46" r="10" fill="#d97396" />
-      <circle cx="21" cy="40" r="3" fill="#ffffff" opacity="0.6" />
-      <circle cx="39" cy="43" r="2.5" fill="#ffffff" opacity="0.6" />
-    </svg>
-  );
-}
-
 export function Hero() {
   return (
-    <section id="top" className="relative flex min-h-[92svh] items-end overflow-hidden">
-      <img
-        src="/sections/hero.svg"
-        alt=""
-        width={1920}
-        height={1200}
-        fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      <div className="relative mx-auto w-full max-w-6xl px-4 pt-32 pb-16 sm:px-6 sm:pb-24">
+    <section id="top" className="grid-paper">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-16 pb-20 sm:px-6 md:grid-cols-[1.1fr_1fr] md:gap-16 md:pt-24 md:pb-28">
         <Reveal>
-          <Cherries />
-          <p className="mt-4 -rotate-2 font-script text-3xl text-plum-500 sm:text-4xl">
-            clothing avenue
+          <p className="text-xs font-bold tracking-[0.3em] text-plum-600 uppercase">
+            Clothing avenue · Quezon City
           </p>
-          <h1 className="mt-2 font-display text-[clamp(4rem,13vw,10rem)] leading-[0.9] italic text-plum-600">
-            afforda haul
+          <h1 className="mt-4 font-display text-[clamp(2.75rem,7vw,4.75rem)] leading-[1.05] font-medium text-plum-700">
+            Cute finds,
+            <br />
+            kind prices.
           </h1>
-          <p className="mt-6 max-w-md text-lg italic text-plum-700">
-            Enjoy the ease of Cash on Delivery and in-person payment for all
-            items.
+          <p className="mt-6 max-w-md text-lg leading-relaxed text-plum-700">
+            Hand-picked, affordable fashion — order with Cash on Delivery or
+            pay in person. No checkout stress, ever.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <a
               href="#collection"
-              className="rounded-full border-2 border-plum-900 bg-plum-800 px-8 py-3 text-center font-bold tracking-wide text-cream-50 uppercase shadow-petal transition-all motion-safe:hover:translate-x-[3px] motion-safe:hover:translate-y-[3px] motion-safe:hover:shadow-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600"
+              className="bg-plum-700 px-8 py-3.5 text-center text-xs font-bold tracking-[0.2em] text-cream-50 uppercase transition-colors hover:bg-plum-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600"
             >
               View the Collection
             </a>
             <a
               href="#contact"
-              className="rounded-full border-2 border-plum-800 bg-white px-8 py-3 text-center font-bold tracking-wide text-plum-800 uppercase shadow-sticker transition-all motion-safe:hover:translate-x-[3px] motion-safe:hover:translate-y-[3px] motion-safe:hover:shadow-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600"
+              className="border border-plum-700 bg-cream-50 px-8 py-3.5 text-center text-xs font-bold tracking-[0.2em] text-plum-700 uppercase transition-colors hover:bg-petal-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600"
             >
               Message Us to Order
             </a>
           </div>
+
+          <div className="mt-12 inline-block border border-plum-700/40 bg-cream-50 shadow-puff">
+            <p className="bg-plum-700 px-5 py-2 text-xs font-bold tracking-[0.2em] text-cream-50 uppercase">
+              This week · New drop
+            </p>
+            <p className="px-5 py-4 font-display text-xl text-plum-800">
+              Fresh arrivals every Friday
+              <span className="mt-1 block font-sans text-sm font-normal tracking-wide text-plum-600">
+                COD & in-person payment · Mon–Sat, 10am–6pm
+              </span>
+            </p>
+          </div>
         </Reveal>
-        <a
-          href="#collection"
-          className="absolute right-6 bottom-8 hidden items-center gap-2 rounded-full text-sm font-bold text-plum-600 transition-colors hover:text-plum-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600 sm:flex"
-        >
-          scroll
-          <svg viewBox="0 0 24 24" className="h-4 w-4 motion-safe:animate-bounce" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-            <path d="M12 4v16m0 0l-6-6m6 6l6-6" />
-          </svg>
-        </a>
+        <Reveal delay={150}>
+          <img
+            src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1000&q=80&auto=format&fit=crop"
+            alt="Curated rack of pastel clothing at the AffordaHaul shop"
+            width={800}
+            height={1000}
+            fetchPriority="high"
+            className="aspect-[4/5] w-full rounded-t-full border border-plum-700/40 object-cover shadow-puff"
+          />
+        </Reveal>
       </div>
     </section>
   );
@@ -78,11 +65,13 @@ export function PromoStrip() {
   const items = (hidden: boolean) => (
     <ul
       aria-hidden={hidden || undefined}
-      className="flex shrink-0 items-center gap-8 pr-8 text-sm font-extrabold tracking-widest uppercase"
+      className="flex shrink-0 items-center gap-10 pr-10 text-xs font-bold tracking-[0.25em] uppercase"
     >
       {perks.map((perk) => (
-        <li key={perk} className="flex items-center gap-8">
-          <span aria-hidden="true">🍒</span>
+        <li key={perk} className="flex items-center gap-10">
+          <svg viewBox="0 0 12 12" className="h-2.5 w-2.5 fill-plum-700" aria-hidden="true">
+            <path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z" />
+          </svg>
           {perk}
         </li>
       ))}
@@ -92,7 +81,7 @@ export function PromoStrip() {
   return (
     <aside
       aria-label="Store perks"
-      className="awning-stripes overflow-hidden border-y-2 border-plum-800 py-3 text-plum-800"
+      className="overflow-hidden border-y border-plum-700/30 bg-lilac-200 py-3 text-plum-800"
     >
       <div className="marquee-track flex w-max">
         {items(false)}

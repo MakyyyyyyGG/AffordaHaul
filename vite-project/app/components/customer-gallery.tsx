@@ -27,7 +27,7 @@ const items: GalleryItem[] = [
 ];
 
 const arrowButtonClasses =
-  "flex h-11 w-11 items-center justify-center rounded-full border-2 border-plum-800 bg-white text-plum-800 shadow-sticker transition-all hover:text-plum-500 motion-safe:hover:translate-x-[2px] motion-safe:hover:translate-y-[2px] motion-safe:hover:shadow-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600";
+  "flex h-11 w-11 items-center justify-center rounded-full border border-plum-700/40 bg-cream-50 text-plum-700 transition-colors hover:border-plum-700 hover:text-plum-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600";
 
 export function CustomerGallery() {
   const trackRef = useRef<HTMLUListElement>(null);
@@ -46,8 +46,10 @@ export function CustomerGallery() {
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="font-script text-2xl text-plum-500">spotted on the avenue</p>
-              <h2 className="mt-1 font-display text-5xl italic text-plum-600 sm:text-6xl">
+              <p className="text-xs font-bold tracking-[0.3em] text-plum-600 uppercase">
+                Spotted on the avenue
+              </p>
+              <h2 className="mt-3 font-display text-4xl font-medium text-plum-700 sm:text-5xl">
                 Worn by You
               </h2>
               <p className="mt-3 text-plum-700">
@@ -57,13 +59,13 @@ export function CustomerGallery() {
             <div className="flex gap-3">
               <button type="button" onClick={() => scrollByCard(-1)} className={arrowButtonClasses}>
                 <span className="sr-only">Previous looks</span>
-                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                   <path d="M15 5l-7 7 7 7" />
                 </svg>
               </button>
               <button type="button" onClick={() => scrollByCard(1)} className={arrowButtonClasses}>
                 <span className="sr-only">Next looks</span>
-                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                   <path d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -83,7 +85,7 @@ export function CustomerGallery() {
                 key={item.src}
                 className="min-w-[72%] snap-start sm:min-w-[42%] lg:min-w-[23%]"
               >
-                <figure className="overflow-hidden rounded-[2rem] border-2 border-plum-800 bg-white shadow-petal">
+                <figure>
                   {item.type === "video" ? (
                     <video
                       src={item.src}
@@ -91,7 +93,7 @@ export function CustomerGallery() {
                       controls
                       playsInline
                       preload="metadata"
-                      className="aspect-[3/4] w-full border-b-2 border-plum-800 object-cover"
+                      className="aspect-[3/4] w-full rounded-xl object-cover"
                     />
                   ) : (
                     <img
@@ -100,10 +102,10 @@ export function CustomerGallery() {
                       width={600}
                       height={800}
                       loading="lazy"
-                      className="aspect-[3/4] w-full border-b-2 border-plum-800 object-cover"
+                      className="aspect-[3/4] w-full rounded-xl object-cover"
                     />
                   )}
-                  <figcaption className="p-4 text-sm font-extrabold tracking-wide text-plum-800 uppercase">
+                  <figcaption className="mt-3 text-xs font-bold tracking-[0.15em] text-plum-700 uppercase">
                     {item.caption}
                   </figcaption>
                 </figure>

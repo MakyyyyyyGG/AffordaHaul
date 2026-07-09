@@ -7,6 +7,7 @@ export interface ProductColor {
 export interface Product {
   id: string;
   name: string;
+  price: string;
   colors: ProductColor[];
   tag?: "New" | "Best Seller";
 }
@@ -35,6 +36,7 @@ export const products: Product[] = [
   {
     id: "cherry-baby-tee",
     name: "Cherry Baby Tee",
+    price: "₱249",
     tag: "Best Seller",
     colors: [
       color("Blush", "1521572163474-6864f9cf17ab"),
@@ -45,6 +47,7 @@ export const products: Product[] = [
   {
     id: "blush-pleated-skirt",
     name: "Blush Pleated Skirt",
+    price: "₱349",
     tag: "New",
     colors: [
       color("Blush", "1469334031218-e382a71b716b"),
@@ -54,6 +57,7 @@ export const products: Product[] = [
   {
     id: "sweetheart-cardigan",
     name: "Sweetheart Knit Cardigan",
+    price: "₱449",
     colors: [
       color("Berry", "1434389677669-e08b4cac3105"),
       color("Cream", "1551488831-00ddcb6c6bd3"),
@@ -63,6 +67,7 @@ export const products: Product[] = [
   {
     id: "sunday-linen-dress",
     name: "Sunday Linen Dress",
+    price: "₱499",
     tag: "New",
     colors: [
       color("Cream", "1496747611176-843222e1e57c"),
@@ -72,6 +77,7 @@ export const products: Product[] = [
   {
     id: "ribbon-crop-top",
     name: "Ribbon Crop Top",
+    price: "₱229",
     colors: [
       color("Berry", "1485462537746-965f33f7f6a7"),
       color("Blush", "1517841905240-472988babdf9"),
@@ -80,6 +86,7 @@ export const products: Product[] = [
   {
     id: "picnic-gingham-blouse",
     name: "Picnic Gingham Blouse",
+    price: "₱329",
     tag: "Best Seller",
     colors: [
       color("Blush", "1550614000-4895a10e1bfd"),

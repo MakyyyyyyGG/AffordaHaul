@@ -2,34 +2,43 @@ import { Reveal } from "./reveal";
 
 export function MapSection() {
   return (
-    <section id="visit" className="scroll-mt-16 bg-cream-50">
+    <section id="visit" className="grid-paper scroll-mt-16">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-24 sm:px-6 md:grid-cols-[1fr_1.4fr] md:gap-16">
         <Reveal>
-          <p className="font-script text-2xl text-plum-500">come say hi</p>
-          <h2 className="mt-1 font-display text-5xl italic text-plum-600 sm:text-6xl">
-            Find us on the avenue
+          <p className="text-xs font-bold tracking-[0.3em] text-plum-600 uppercase">
+            Come say hi
+          </p>
+          <h2 className="mt-3 font-display text-4xl font-medium text-plum-700 sm:text-5xl">
+            Where to find us
           </h2>
           <p className="mt-6 leading-relaxed text-plum-700">
             Prefer to pay in person? Meet us at our pickup spot — try on your
             picks, pay on the spot, and walk away with your haul.
           </p>
-          <address className="mt-6 rounded-r-3xl border-l-4 border-petal-400 bg-petal-100 py-3 pl-4 font-extrabold text-plum-800 not-italic">
-            123 Clothing Avenue, Quezon City
-            <span className="block font-bold text-plum-700">
+          <div className="mt-8 inline-block border border-plum-700/40 bg-cream-50 shadow-puff">
+            <p className="bg-plum-700 px-5 py-2 text-xs font-bold tracking-[0.2em] text-cream-50 uppercase">
               Mon–Sat · 10am–6pm
-            </span>
-          </address>
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=14.5995,120.9892"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-block rounded-full border-2 border-plum-900 bg-plum-800 px-8 py-3 font-bold tracking-wide text-cream-50 uppercase shadow-petal transition-all motion-safe:hover:translate-x-[3px] motion-safe:hover:translate-y-[3px] motion-safe:hover:shadow-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600"
-          >
-            Get Directions
-          </a>
+            </p>
+            <address className="px-5 py-4 font-display text-xl text-plum-800 not-italic">
+              123 Clothing Avenue
+              <span className="block font-sans text-sm font-normal tracking-wide text-plum-600">
+                Quezon City, Philippines
+              </span>
+            </address>
+          </div>
+          <div className="mt-8">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=14.5995,120.9892"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-plum-700 px-8 py-3.5 text-xs font-bold tracking-[0.2em] text-cream-50 uppercase transition-colors hover:bg-plum-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600"
+            >
+              Get Directions
+            </a>
+          </div>
         </Reveal>
         <Reveal delay={150}>
-          <div className="overflow-hidden rounded-[2.5rem] border-2 border-plum-800 shadow-lilac">
+          <div className="overflow-hidden rounded-xl border border-plum-700/40 shadow-puff">
             <iframe
               title="Map showing the AffordaHaul meet-up and pickup location"
               src="https://www.openstreetmap.org/export/embed.html?bbox=120.9742%2C14.5895%2C121.0042%2C14.6095&layer=mapnik&marker=14.5995%2C120.9892"
@@ -56,7 +65,7 @@ const strip = [
 
 export function ImageStrip() {
   return (
-    <div aria-hidden="true" className="bg-cream-50">
+    <div aria-hidden="true" className="grid-paper">
       <ul className="grid grid-cols-2 gap-3 px-3 pb-3 sm:grid-cols-3 lg:grid-cols-5">
         {strip.map((src, i) => (
           <li
@@ -69,7 +78,7 @@ export function ImageStrip() {
               width={600}
               height={800}
               loading="lazy"
-              className="aspect-[3/4] w-full rounded-3xl border-2 border-plum-800 object-cover"
+              className="aspect-[3/4] w-full rounded-xl object-cover"
             />
           </li>
         ))}

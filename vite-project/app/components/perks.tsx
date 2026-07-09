@@ -5,7 +5,7 @@ const iconProps = {
   className: "h-7 w-7 shrink-0",
   fill: "none",
   stroke: "currentColor",
-  strokeWidth: 1.8,
+  strokeWidth: 1.5,
   strokeLinecap: "round",
   strokeLinejoin: "round",
 } as const;
@@ -15,7 +15,6 @@ const perks = [
     title: "Cash on Delivery",
     description:
       "Pay only when your order arrives at your doorstep — no online payment, no worries.",
-    bubble: "bg-petal-200",
     icon: (
       <svg {...iconProps} aria-hidden="true">
         <rect x="2" y="7" width="20" height="12" rx="3" />
@@ -28,7 +27,6 @@ const perks = [
     title: "Fast Delivery",
     description:
       "Experience fast delivery, ensuring your stylish finds arrive at your door in no time.",
-    bubble: "bg-lilac-200",
     icon: (
       <svg {...iconProps} aria-hidden="true">
         <path d="M1 8h13v9H1zM14 11h4l3 3v3h-7z" />
@@ -41,7 +39,6 @@ const perks = [
     title: "In-Person Payment",
     description:
       "Prefer meet-ups? Pay in person for any item — easy, safe, and on your schedule.",
-    bubble: "bg-peach-200",
     icon: (
       <svg {...iconProps} aria-hidden="true">
         <path d="M3 9l2-5h14l2 5" />
@@ -55,7 +52,6 @@ const perks = [
     title: "Personal Support",
     description:
       "Message us anytime — personalized assistance from browsing to delivery, every time.",
-    bubble: "bg-mint-200",
     icon: (
       <svg {...iconProps} aria-hidden="true">
         <path d="M21 12a9 9 0 10-3.5 7.1L21 20l-.6-3.3A8.9 8.9 0 0021 12z" />
@@ -67,36 +63,40 @@ const perks = [
 
 export function Perks() {
   return (
-    <section className="bg-lilac-100">
-      <div aria-hidden="true" className="checkerboard h-6 border-y-2 border-plum-800" />
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-24 sm:px-6 md:grid-cols-[1fr_1.8fr] md:gap-16">
-        <h2 className="sr-only">Why shop with us</h2>
+    <section className="bg-plum-700">
+      <div aria-hidden="true" className="scallop scallop-cream" />
+      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
         <Reveal>
-          <img
-            src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=900&q=80&auto=format&fit=crop"
-            alt="Rack of curated clothing at the AffordaHaul pickup spot"
-            width={700}
-            height={900}
-            loading="lazy"
-            className="aspect-[7/9] w-full rounded-t-[8rem] rounded-b-[2rem] border-2 border-plum-800 object-cover shadow-petal"
-          />
+          <div className="text-center">
+            <p className="text-xs font-bold tracking-[0.3em] text-petal-200 uppercase">
+              How ordering works
+            </p>
+            <h2 className="mt-3 font-display text-4xl font-medium text-cream-50 sm:text-5xl">
+              Shopping, the simple way
+            </h2>
+          </div>
         </Reveal>
-        <div className="grid gap-6 sm:grid-cols-2">
-          {perks.map((perk, i) => (
-            <Reveal key={perk.title} delay={(i % 2) * 120}>
-              <div className="h-full rounded-[2rem] border-2 border-plum-800 bg-white p-6 shadow-puff">
-                <span
-                  className={`flex h-14 w-14 items-center justify-center rounded-full border-2 border-plum-800 text-plum-800 ${perk.bubble}`}
-                >
-                  {perk.icon}
-                </span>
-                <h3 className="mt-4 text-lg font-extrabold text-plum-800">{perk.title}</h3>
-                <p className="mt-2 leading-relaxed text-plum-700">{perk.description}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal delay={120}>
+          <div className="mt-12 bg-cream-50 p-8 sm:p-12">
+            <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+              {perks.map((perk) => (
+                <li key={perk.title} className="text-center">
+                  <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-plum-700/40 text-plum-700">
+                    {perk.icon}
+                  </span>
+                  <h3 className="mt-4 font-display text-xl font-medium text-plum-800">
+                    {perk.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-plum-700">
+                    {perk.description}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
       </div>
+      <div aria-hidden="true" className="checker-trim h-4" />
     </section>
   );
 }
