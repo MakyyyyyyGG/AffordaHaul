@@ -6,7 +6,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-16 pb-20 sm:px-6 md:grid-cols-[1.1fr_1fr] md:gap-16 md:pt-24 md:pb-28">
         <Reveal>
           <p className="text-xs font-bold tracking-[0.3em] text-plum-600 uppercase">
-            Clothing avenue · Quezon City
+            Clothing avenue · Tiwi, Albay
           </p>
           <h1 className="mt-4 font-display text-[clamp(2.75rem,7vw,4.75rem)] leading-[1.05] font-medium text-plum-700">
             Cute finds,

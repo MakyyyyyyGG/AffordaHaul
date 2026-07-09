@@ -22,13 +22,13 @@ export function MapSection() {
             <address className="px-5 py-4 font-display text-xl text-plum-800 not-italic">
               123 Clothing Avenue
               <span className="block font-sans text-sm font-normal tracking-wide text-plum-600">
-                Quezon City, Philippines
+                Tiwi, Albay, Philippines
               </span>
             </address>
           </div>
           <div className="mt-8">
             <a
-              href="https://www.google.com/maps/search/?api=1&query=14.5995,120.9892"
+              href="https://www.google.com/maps/search/?api=1&query=13.4585,123.6805"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-plum-700 px-8 py-3.5 text-xs font-bold tracking-[0.2em] text-cream-50 uppercase transition-colors hover:bg-plum-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600"
@@ -41,7 +41,7 @@ export function MapSection() {
           <div className="overflow-hidden rounded-xl border border-plum-700/40 shadow-puff">
             <iframe
               title="Map showing the AffordaHaul meet-up and pickup location"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=120.9742%2C14.5895%2C121.0042%2C14.6095&layer=mapnik&marker=14.5995%2C120.9892"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=123.6655%2C13.4485%2C123.6955%2C13.4685&layer=mapnik&marker=13.4585%2C123.6805"
               loading="lazy"
               className="block h-80 w-full sm:h-96"
             />

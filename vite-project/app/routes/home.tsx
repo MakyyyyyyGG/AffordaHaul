@@ -18,16 +18,22 @@ export function meta({}: Route.MetaArgs) {
     {
       name: "description",
       content:
-        "Cute, affordable fashion finds at AffordaHaul. Browse the collection and order with Cash on Delivery or in-person payment.",
+        "Cute, affordable fashion finds from AffordaHaul in Tiwi, Albay, Philippines. Browse the collection and order with Cash on Delivery or in-person payment.",
     },
     { property: "og:title", content: "AffordaHaul — clothing avenue" },
     {
       property: "og:description",
       content:
-        "Cute, affordable fashion finds. Cash on Delivery and in-person payment available.",
+        "Cute, affordable fashion finds in Tiwi, Albay. Cash on Delivery and in-person payment available.",
     },
     { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://afforda-haul.vercel.app/" },
     { name: "twitter:card", content: "summary" },
+    {
+      tagName: "link",
+      rel: "canonical",
+      href: "https://afforda-haul.vercel.app/",
+    },
   ];
 }
 
@@ -35,18 +41,24 @@ const businessJsonLd = {
   "@context": "https://schema.org",
   "@type": "ClothingStore",
   name: "AffordaHaul",
+  url: "https://afforda-haul.vercel.app/",
   description:
-    "Cute, affordable fashion finds in Quezon City. Order via Facebook Messenger or TikTok and pay with Cash on Delivery or in person.",
+    "Cute, affordable fashion finds in Tiwi, Albay. Order via Facebook Messenger or TikTok and pay with Cash on Delivery or in person.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "123 Clothing Avenue",
-    addressLocality: "Quezon City",
+    addressLocality: "Tiwi",
+    addressRegion: "Albay",
     addressCountry: "PH",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 14.5995,
-    longitude: 120.9892,
+    latitude: 13.4585,
+    longitude: 123.6805,
+  },
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "Tiwi, Albay, Philippines",
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",

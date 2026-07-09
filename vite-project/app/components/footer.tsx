@@ -105,7 +105,7 @@ export function Footer() {
       <div className="border-t border-petal-300/20 bg-plum-900">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-sm text-petal-100 sm:flex-row sm:px-6">
           <p>© {new Date().getFullYear()} AffordaHaul. All rights reserved.</p>
-          <p>Made with love in Quezon City · COD available</p>
+          <p>Made with love in Tiwi, Albay · COD available</p>
         </div>
       </div>
     </footer>

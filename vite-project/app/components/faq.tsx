@@ -9,12 +9,12 @@ const faqs = [
   {
     question: "What payment methods does AffordaHaul accept?",
     answer:
-      "AffordaHaul accepts Cash on Delivery (COD) and in-person payment — no online payment is required. With COD you pay only when your order arrives at your doorstep, or you can pay in cash when we meet at our Quezon City pickup spot.",
+      "AffordaHaul accepts Cash on Delivery (COD) and in-person payment — no online payment is required. With COD you pay only when your order arrives at your doorstep, or you can pay in cash when we meet at our pickup spot in Tiwi, Albay.",
   },
   {
     question: "Can I try clothes on before paying?",
     answer:
-      "Yes. Meet us at our pickup spot at 123 Clothing Avenue, Quezon City (open Monday to Saturday, 10am–6pm), try on your picks, and pay on the spot only for the pieces you keep.",
+      "Yes. Meet us at our pickup spot at 123 Clothing Avenue, Tiwi, Albay (open Monday to Saturday, 10am–6pm), try on your picks, and pay on the spot only for the pieces you keep.",
   },
   {
     question: "How fast is delivery?",
@@ -29,7 +29,7 @@ const faqs = [
   {
     question: "Where is AffordaHaul located?",
     answer:
-      "AffordaHaul is based in Quezon City, Philippines, with a meet-up and pickup spot at 123 Clothing Avenue, open Monday to Saturday from 10am to 6pm. If you can't make it in person, we also deliver with Cash on Delivery.",
+      "AffordaHaul is based in Tiwi, Albay, Philippines, with a meet-up and pickup spot at 123 Clothing Avenue, open Monday to Saturday from 10am to 6pm. If you can't make it in person, we also deliver with Cash on Delivery.",
   },
 ];
 
