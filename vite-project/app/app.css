@@ -1,34 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Lobster Two", "Brush Script MT", cursive;
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Georgia", serif;
   --font-script: "Caveat", "Segoe Script", cursive;
 
-  /* Blush pinks — backgrounds */
-  --color-blush-50: #fdf4f6;
-  --color-blush-100: #fbe4ea;
-  --color-blush-200: #f7cdd8;
-  --color-blush-300: #f0afc0;
+  /* Cream — warm paper backgrounds */
+  --color-cream-50: #fefbf4;
+  --color-cream-100: #fbf3e3;
+  --color-cream-200: #f6e8cd;
 
-  /* Raspberry — brand accent (logo, headings, buttons) */
-  --color-raspberry-400: #e05a86;
-  --color-raspberry-500: #ce3a68;
-  --color-raspberry-600: #b72853;
-  --color-raspberry-700: #9c1f45;
+  /* Petal pinks — pastel brand hue */
+  --color-petal-100: #fde3ea;
+  --color-petal-200: #f9ccd9;
+  --color-petal-300: #f4adc3;
+  --color-petal-400: #ec8aa9;
 
-  /* Cherry red — badges, small motifs */
-  --color-cherry-500: #c81f35;
-  --color-cherry-600: #a81428;
+  /* Lilac — dreamy retro secondary */
+  --color-lilac-100: #e7e7fb;
+  --color-lilac-200: #cfd1f6;
+  --color-lilac-300: #b4b8f0;
 
-  /* Warm cocoa — body text, footer */
-  --color-cocoa-700: #5c3340;
-  --color-cocoa-800: #46242f;
-  --color-cocoa-900: #331a22;
+  /* Peach — sunny accent */
+  --color-peach-100: #ffe8d6;
+  --color-peach-200: #ffd0af;
+  --color-peach-300: #ffb187;
 
-  /* Brutalist hard offset shadows */
-  --shadow-blush: 6px 6px 0 0 #b72853;
-  --shadow-brutal: 5px 5px 0 0 #331a22;
+  /* Mint — fresh accent */
+  --color-mint-100: #ddf1e3;
+  --color-mint-200: #bfe5cc;
+
+  /* Plum — brand maroon (#4A1C21) for text, outlines, buttons, footer */
+  --color-plum-500: #9a4f58;
+  --color-plum-600: #7c343c;
+  --color-plum-700: #63262d;
+  --color-plum-800: #4a1c21;
+  --color-plum-900: #351114;
+
+  /* Soft retro sticker shadows */
+  --shadow-lilac: 8px 8px 0 0 #cfd1f6;
+  --shadow-petal: 8px 8px 0 0 #f9ccd9;
+  --shadow-sticker: 5px 5px 0 0 #4a1c21;
+  --shadow-puff: 0 16px 40px -16px rgb(74 28 33 / 0.28);
 }
 
 html {
@@ -42,7 +55,27 @@ html {
 }
 
 body {
-  @apply bg-blush-50 font-sans text-cocoa-800 antialiased;
+  @apply bg-cream-50 font-sans text-plum-800 antialiased;
+}
+
+/* Retro candy-stripe awning */
+.awning-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-petal-200) 0 1.25rem,
+    var(--color-cream-50) 1.25rem 2.5rem
+  );
+}
+
+/* Checkerboard picnic ribbon */
+.checkerboard {
+  background-image: conic-gradient(
+    var(--color-petal-300) 0 25%,
+    var(--color-cream-50) 0 50%,
+    var(--color-petal-300) 0 75%,
+    var(--color-cream-50) 0
+  );
+  background-size: 1.5rem 1.5rem;
 }
 
 @keyframes marquee {

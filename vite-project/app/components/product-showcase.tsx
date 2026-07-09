@@ -9,14 +9,14 @@ function WishlistButton({ productName }: { productName: string }) {
       type="button"
       aria-pressed={saved}
       onClick={() => setSaved((s) => !s)}
-      className="absolute top-3 right-3 flex h-10 w-10 items-center justify-center border-2 border-cocoa-900 bg-white text-cocoa-900 transition-colors hover:text-raspberry-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-raspberry-600"
+      className="absolute top-3 right-3 flex h-10 w-10 items-center justify-center rounded-full border-2 border-plum-800 bg-white text-plum-800 transition-colors hover:text-plum-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600"
     >
       <span className="sr-only">Save {productName} to wishlist</span>
       <svg
         viewBox="0 0 24 24"
         className="h-5 w-5"
-        fill={saved ? "#b72853" : "none"}
-        stroke={saved ? "#b72853" : "currentColor"}
+        fill={saved ? "#ec8aa9" : "none"}
+        stroke={saved ? "#ec8aa9" : "currentColor"}
         strokeWidth="2"
         strokeLinejoin="round"
         aria-hidden="true"
@@ -33,8 +33,8 @@ function ProductCard({ product, preferredColor }: { product: Product; preferredC
   const selected = product.colors[selectedIndex];
 
   return (
-    <article className="group border-2 border-cocoa-900 bg-white shadow-blush">
-      <div className="relative overflow-hidden border-b-2 border-cocoa-900">
+    <article className="group overflow-hidden rounded-[2rem] border-2 border-plum-800 bg-white shadow-lilac">
+      <div className="relative overflow-hidden border-b-2 border-plum-800">
         <img
           src={selected.image}
           alt={`${product.name} in ${selected.name}`}
@@ -44,14 +44,14 @@ function ProductCard({ product, preferredColor }: { product: Product; preferredC
           className="aspect-[4/5] w-full object-cover transition-transform duration-700 motion-safe:group-hover:scale-105"
         />
         {product.tag && (
-          <p className="absolute top-3 left-3 border-2 border-cocoa-900 bg-cherry-500 px-3 py-1 text-xs font-bold tracking-wide text-white uppercase">
+          <p className="absolute top-3 left-3 rounded-full border-2 border-plum-800 bg-peach-200 px-3 py-1 text-xs font-extrabold tracking-wide text-plum-900 uppercase">
             {product.tag}
           </p>
         )}
         <WishlistButton productName={product.name} />
       </div>
       <div className="p-4">
-        <h3 className="text-sm font-bold tracking-widest text-cocoa-900 uppercase">
+        <h3 className="text-sm font-extrabold tracking-widest text-plum-800 uppercase">
           {product.name}
         </h3>
         <div className="mt-3 flex items-center gap-2">
@@ -61,15 +61,15 @@ function ProductCard({ product, preferredColor }: { product: Product; preferredC
               type="button"
               aria-pressed={i === selectedIndex}
               onClick={() => setSelectedIndex(i)}
-              className={`h-6 w-6 border-2 border-cocoa-900 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-raspberry-600 ${
-                i === selectedIndex ? "scale-110 ring-2 ring-raspberry-600 ring-offset-2" : ""
+              className={`h-6 w-6 rounded-full border-2 border-plum-800 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600 ${
+                i === selectedIndex ? "scale-110 ring-2 ring-plum-500 ring-offset-2" : ""
               }`}
               style={{ backgroundColor: color.hex }}
             >
               <span className="sr-only">Show {product.name} in {color.name}</span>
             </button>
           ))}
-          <span className="ml-1 text-xs font-semibold tracking-wide text-cocoa-700 uppercase">
+          <span className="ml-1 text-xs font-bold tracking-wide text-plum-600 uppercase">
             {selected.name}
           </span>
         </div>
@@ -89,10 +89,10 @@ const filterColors = (() => {
 })();
 
 const chipClasses = (active: boolean) =>
-  `flex items-center gap-2 border-2 border-cocoa-900 px-4 py-2 text-xs font-bold tracking-widest uppercase transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-raspberry-600 ${
+  `flex items-center gap-2 rounded-full border-2 border-plum-800 px-4 py-2 text-xs font-extrabold tracking-widest uppercase transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600 ${
     active
-      ? "translate-x-[2px] translate-y-[2px] bg-raspberry-600 text-white shadow-none"
-      : "bg-white text-cocoa-900 shadow-brutal motion-safe:hover:translate-x-[2px] motion-safe:hover:translate-y-[2px] motion-safe:hover:shadow-none"
+      ? "translate-x-[2px] translate-y-[2px] bg-plum-800 text-cream-50 shadow-none"
+      : "bg-white text-plum-800 shadow-sticker motion-safe:hover:translate-x-[2px] motion-safe:hover:translate-y-[2px] motion-safe:hover:shadow-none"
   }`;
 
 export function ProductShowcase() {
@@ -102,16 +102,16 @@ export function ProductShowcase() {
     : products;
 
   return (
-    <section id="collection" className="scroll-mt-16 bg-blush-50">
+    <section id="collection" className="scroll-mt-16 bg-cream-50">
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
         <Reveal>
-          <div className="flex flex-wrap items-baseline justify-between gap-4 border-b-2 border-cocoa-900 pb-4">
-            <h2 className="text-sm font-bold tracking-[0.25em] text-cocoa-900 uppercase">
+          <div className="flex flex-wrap items-baseline justify-between gap-4 border-b-2 border-plum-800/20 pb-4">
+            <h2 className="text-sm font-extrabold tracking-[0.25em] text-plum-800 uppercase">
               Our New Arrivals
             </h2>
             <a
               href="#contact"
-              className="text-sm font-bold tracking-[0.25em] text-cocoa-900 uppercase underline decoration-2 underline-offset-4 transition-colors hover:text-raspberry-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-raspberry-600"
+              className="text-sm font-extrabold tracking-[0.25em] text-plum-800 uppercase underline decoration-2 underline-offset-4 transition-colors hover:text-plum-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600"
             >
               View All
             </a>
@@ -137,7 +137,7 @@ export function ProductShowcase() {
               >
                 <span
                   aria-hidden="true"
-                  className="h-3.5 w-3.5 border border-cocoa-900"
+                  className="h-3.5 w-3.5 rounded-full border border-plum-800"
                   style={{ backgroundColor: color.hex }}
                 />
                 {color.name}
@@ -158,19 +158,27 @@ export function ProductShowcase() {
 }
 
 const categories = [
-  { label: "Tops & Dresses", image: "/sections/cat-tops.svg" },
-  { label: "Bottoms & Sets", image: "/sections/cat-bottoms.svg" },
+  {
+    label: "Tops & Dresses",
+    image:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000&q=80&auto=format&fit=crop",
+  },
+  {
+    label: "Bottoms & Sets",
+    image:
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1000&q=80&auto=format&fit=crop",
+  },
 ];
 
 export function CategoryTiles() {
   return (
-    <section aria-label="Categories" className="bg-blush-50">
-      <div className="mx-auto grid max-w-6xl gap-6 px-4 pb-24 sm:px-6 md:grid-cols-2">
+    <section aria-label="Categories" className="bg-cream-50">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 pb-24 sm:px-6 md:grid-cols-2">
         {categories.map((category, i) => (
           <Reveal key={category.label} delay={i * 120}>
             <a
               href="#collection"
-              className="group relative block overflow-hidden border-2 border-cocoa-900 shadow-blush focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-raspberry-600"
+              className="group relative block overflow-hidden rounded-t-[10rem] rounded-b-[2rem] border-2 border-plum-800 shadow-petal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum-600"
             >
               <img
                 src={category.image}
@@ -178,14 +186,14 @@ export function CategoryTiles() {
                 width={800}
                 height={1000}
                 loading="lazy"
-                className="aspect-[4/5] w-full object-cover transition-transform duration-700 motion-safe:group-hover:scale-105 md:aspect-[4/3]"
+                className="aspect-[4/5] w-full object-cover transition-transform duration-700 motion-safe:group-hover:scale-105 md:aspect-[4/4.5]"
               />
-              <span className="absolute inset-0 bg-gradient-to-t from-cocoa-900/70 via-transparent to-transparent" />
+              <span className="absolute inset-0 bg-gradient-to-t from-plum-900/70 via-transparent to-transparent" />
               <span className="absolute bottom-6 left-6">
                 <span className="font-display text-3xl italic text-white sm:text-4xl">
                   {category.label}
                 </span>
-                <span className="mt-1 block text-sm font-bold tracking-widest text-blush-100 uppercase transition-transform duration-300 motion-safe:group-hover:translate-x-1">
+                <span className="mt-1 block text-sm font-extrabold tracking-widest text-petal-100 uppercase transition-transform duration-300 motion-safe:group-hover:translate-x-1">
                   Explore →
                 </span>
               </span>

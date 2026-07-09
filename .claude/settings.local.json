@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:woven-wear.webflow.io)"
+      "WebFetch(domain:woven-wear.webflow.io)",
+      "WebFetch(domain:www.atnndesign.com)",
+      "WebFetch(domain:manatee-bumblebee-yawb.squarespace.com)"
     ]
   }
 }

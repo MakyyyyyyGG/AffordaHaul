@@ -12,17 +12,22 @@ export interface Product {
 }
 
 const swatch = {
-  Blush: "#f0afc0",
-  Berry: "#ce3a68",
-  Cream: "#e9d8c8",
-  Cocoa: "#5c3340",
+  Blush: "#f4adc3",
+  Berry: "#ec8aa9",
+  Cream: "#f6e8cd",
+  Cocoa: "#9c7a85",
 } as const;
 
-function color(name: keyof typeof swatch, productId: string): ProductColor {
+/** Unsplash stock photos used as product fillers until real shots are ready. */
+function stock(photoId: string): string {
+  return `https://images.unsplash.com/photo-${photoId}?w=900&q=80&auto=format&fit=crop`;
+}
+
+function color(name: keyof typeof swatch, photoId: string): ProductColor {
   return {
     name,
     hex: swatch[name],
-    image: `/products/${productId}-${name.toLowerCase()}.svg`,
+    image: stock(photoId),
   };
 }
 
@@ -32,9 +37,9 @@ export const products: Product[] = [
     name: "Cherry Baby Tee",
     tag: "Best Seller",
     colors: [
-      color("Blush", "cherry-baby-tee"),
-      color("Cream", "cherry-baby-tee"),
-      color("Berry", "cherry-baby-tee"),
+      color("Blush", "1521572163474-6864f9cf17ab"),
+      color("Cream", "1523381210434-271e8be1f52b"),
+      color("Berry", "1567401893414-76b7b1e5a7a5"),
     ],
   },
   {
@@ -42,17 +47,17 @@ export const products: Product[] = [
     name: "Blush Pleated Skirt",
     tag: "New",
     colors: [
-      color("Blush", "blush-pleated-skirt"),
-      color("Cream", "blush-pleated-skirt"),
+      color("Blush", "1469334031218-e382a71b716b"),
+      color("Cream", "1509631179647-0177331693ae"),
     ],
   },
   {
     id: "sweetheart-cardigan",
     name: "Sweetheart Knit Cardigan",
     colors: [
-      color("Berry", "sweetheart-cardigan"),
-      color("Cream", "sweetheart-cardigan"),
-      color("Cocoa", "sweetheart-cardigan"),
+      color("Berry", "1434389677669-e08b4cac3105"),
+      color("Cream", "1551488831-00ddcb6c6bd3"),
+      color("Cocoa", "1544441893-675973e31985"),
     ],
   },
   {
@@ -60,16 +65,16 @@ export const products: Product[] = [
     name: "Sunday Linen Dress",
     tag: "New",
     colors: [
-      color("Cream", "sunday-linen-dress"),
-      color("Blush", "sunday-linen-dress"),
+      color("Cream", "1496747611176-843222e1e57c"),
+      color("Blush", "1515372039744-b8f02a3ae446"),
     ],
   },
   {
     id: "ribbon-crop-top",
     name: "Ribbon Crop Top",
     colors: [
-      color("Berry", "ribbon-crop-top"),
-      color("Blush", "ribbon-crop-top"),
+      color("Berry", "1485462537746-965f33f7f6a7"),
+      color("Blush", "1517841905240-472988babdf9"),
     ],
   },
   {
@@ -77,9 +82,9 @@ export const products: Product[] = [
     name: "Picnic Gingham Blouse",
     tag: "Best Seller",
     colors: [
-      color("Blush", "picnic-gingham-blouse"),
-      color("Cream", "picnic-gingham-blouse"),
-      color("Berry", "picnic-gingham-blouse"),
+      color("Blush", "1550614000-4895a10e1bfd"),
+      color("Cream", "1542295669297-4d352b042bca"),
+      color("Berry", "1525507119028-ed4c629a60a3"),
     ],
   },
 ];
