@@ -14,7 +14,7 @@ import { Footer } from "../components/footer";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "AffordaHaul — Affordable Women's Clothing in Tiwi, Albay" },
+    { title: "AffordaHaul Clothing Avenue — Affordable Women's Clothing in Tiwi, Albay" },
     {
       name: "description",
       content:
@@ -22,7 +22,7 @@ export function meta({}: Route.MetaArgs) {
     },
     {
       property: "og:title",
-      content: "AffordaHaul — Affordable Women's Clothing in Tiwi, Albay",
+      content: "AffordaHaul Clothing Avenue — Affordable Women's Clothing in Tiwi, Albay",
     },
     {
       property: "og:description",
@@ -45,6 +45,7 @@ const businessJsonLd = {
   "@type": "ClothingStore",
   name: "AffordaHaul",
   url: "https://afforda-haul.vercel.app/",
+  logo: "https://afforda-haul.vercel.app/AffordaHaul%20Clothing%20Avenue%20Favicon.webp",
   description:
     "Modern, elegant, and affordable women's clothing shop in Tiwi, Albay — dresses, tops, jeans, coords, swimwear, and pants. Order via Facebook Messenger or TikTok and pay with Cash on Delivery or in person.",
   address: {

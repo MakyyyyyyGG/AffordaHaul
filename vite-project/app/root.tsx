@@ -33,6 +33,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
           name="google-site-verification"
           content="bT4J4kuqIRMd6Ma3JEOr6f6CtqiHHfcmFtzTGiVnMkA"
         />
+        <link
+          rel="icon"
+          type="image/webp"
+          href="/AffordaHaul%20Clothing%20Avenue%20Favicon.webp"
+        />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-4Q3MNTZJWZ"
